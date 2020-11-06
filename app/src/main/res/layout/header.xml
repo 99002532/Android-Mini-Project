@@ -3,7 +3,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="180dp"
     android:padding="20dp"
-    android:background="@color/colorPrimaryDark"
+    android:background="#A85151"
     style="@style/ThemeOverlay.AppCompat.Dark">
 
     <ImageView

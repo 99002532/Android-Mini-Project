@@ -30,6 +30,7 @@ import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.tabs.TabLayout;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionDeniedResponse;
@@ -45,7 +46,8 @@ public class MainActivity extends AppCompatActivity {
     Toolbar mToolbar;
     ActionBarDrawerToggle mActionBarDrawerToggle;
     NavigationView mNavigationView;
-
+    //TabLayout tabLayout=(TabLayout) findViewById(R.id.sliding_tabs);
+    //TabLayout.TabLayoutOnPageChangeListener()
     long MIN_TIME = 5000;
     public static Location currentLocation = null;
 
@@ -73,22 +75,10 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.nav_about:
-                        Toast.makeText(MainActivity.this, "About Clicked", Toast.LENGTH_SHORT).show();
+                        setContentView(R.layout.aboutlay);
                         break;
                     case R.id.nav_contect:
-                        Toast.makeText(MainActivity.this, "Contect Clicked", Toast.LENGTH_SHORT).show();
-                        break;
-                    case R.id.nav_setting:
-                        Toast.makeText(MainActivity.this, "Setting Clicked", Toast.LENGTH_SHORT).show();
-                        break;
-                    case R.id.nav_feedback:
-                        Toast.makeText(MainActivity.this, "Feedback Clicked", Toast.LENGTH_SHORT).show();
-                        break;
-                    case R.id.nav_android:
-                        Toast.makeText(MainActivity.this, "Android Clicked", Toast.LENGTH_SHORT).show();
-                        break;
-                    case R.id.nav_ios:
-                        Toast.makeText(MainActivity.this, "iOS Clicked", Toast.LENGTH_SHORT).show();
+                        setContentView(R.layout.contactlay);
                         break;
                 }
                 return false;
@@ -125,14 +115,13 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }).check();
 
-//        stock.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(MainActivity.this, StockActivity.class));
-//                Log.i("On Click", "stock");
-//            }
-//        });
-
+        news.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, NewsActivity.class));
+                Log.i("On Click", "news");
+            }
+        });
         news.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -153,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, StartupActivity.class));
-                Log.i("On Click", "startup");
+                Log.i("On Click", "Memes");
             }
         });
 
@@ -161,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, ScoreActivity.class));
-                Log.i("On Click", "scoer");
+                Log.i("On Click", "score");
             }
         });
 

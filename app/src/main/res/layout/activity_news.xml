@@ -5,15 +5,15 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryLight"
+    android:background="#888787"
     tools:context=".newsFile.NewsActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/newsToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        app:titleTextColor="@color/colorPrimaryLight"
+        android:background="#390202"
+        app:titleTextColor="#611818"
         android:elevation="6dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         tools:targetApi="lollipop" />
